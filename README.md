@@ -7,8 +7,11 @@ It uses the ncurses library.
 
 You have to use the 'make' command to compile the project.
 
-Usage: ./conway [map]
+Usage: ./conway [map] [nbr]
 
+Generation per Second becomes 'GPS'
+
+If you don't precise the number of GPS, you'll have to press space bar to skip generations
 You can find examples for maps in the folder maps/
 
 
@@ -23,8 +26,12 @@ Known Bugs:
 
 - No error handling for maps and argument [COMING SOON]
 
+
 Update Log:
 
+
+April 3rd, 2019:
+- New functionnality: Add an integer after the map argument to precize the GPS
 
 April 2nd, 2019:
 - First push of the project without error handling
@@ -33,3 +40,7 @@ April 2nd, 2019:
 Notes:
 
 Some Features will coming in the future.
+
+Features already implemented:
+
+- GPS handling (speed)
