@@ -7,7 +7,7 @@ It uses the ncurses library.
 
 You have to use the 'make' command to compile the project.
 
-Usage: ./conway [map] [nbr]
+Usage: ./conway [map] [speed]
 
 Generation per Second becomes 'GPS'
 
