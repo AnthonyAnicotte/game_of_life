@@ -9,7 +9,7 @@
 
 typedef struct game_of_life_s
 {
-    int generation;
+    unsigned long int generation;
     char **map;
     int columns;
     int lines;

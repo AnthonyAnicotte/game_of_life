@@ -11,7 +11,7 @@
 
 void free_structure(game_of_life_t *gol_struct);
 char **parse_map(char *str, game_of_life_t *gol_struct);
-void print_tab(char **tab, int state);
+void print_tab(char **tab, unsigned long int state);
 int start_game(game_of_life_t *gol_struct);
 void free_tab(char **tab);
 char **copy_tab(char **map, int lines);

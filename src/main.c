@@ -30,7 +30,7 @@ void get_tab_from_map_str(char *map_path, game_of_life_t *gol_struct)
     free(map_str);
 }
 
-void print_tab(char **tab, int state)
+void print_tab(char **tab, unsigned long int state)
 {
     printw(
         "Simulation of 'The Game Of life by Pr John Conway\n      Adapted in C "
