@@ -49,7 +49,10 @@ int main(int ac, char **av)
     //        return (84);
     gol_struct = malloc(sizeof(game_of_life_t));
     gol_struct->generation = 0;
+    if (av[2] != NULL)
+        gol_struct->speed = atoi(av[2]);
     get_tab_from_map_str(av[1], gol_struct);
     start_game(gol_struct);
+    printf("speed = %d\n", gol_struct->speed);
     free_structure(gol_struct);
 }

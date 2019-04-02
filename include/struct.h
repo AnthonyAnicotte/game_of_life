@@ -10,6 +10,7 @@
 typedef struct game_of_life_s
 {
     unsigned long int generation;
+    int speed;
     char **map;
     int columns;
     int lines;

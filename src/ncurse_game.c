@@ -66,12 +66,17 @@ void update_cells(game_of_life_t *gol_struct)
 int get_event(game_of_life_t *gol_struct)
 {
     while (1) {
-        switch (getch()) {
-        case KEY_BACKSPACE:
-            return (0);
-        case ' ':
+        if (gol_struct->speed) {
             update_cells(gol_struct);
-            break;
+            usleep((__useconds_t)1000000/gol_struct->speed);
+        } else {
+            switch (getch()) {
+            case KEY_BACKSPACE:
+                return (0);
+            case ' ':
+                update_cells(gol_struct);
+                break;
+            }
         }
     }
 }
