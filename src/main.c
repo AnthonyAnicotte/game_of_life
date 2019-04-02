@@ -35,9 +35,10 @@ void print_tab(char **tab, int state)
     printw(
         "Simulation of 'The Game Of life by Pr John Conway\n      Adapted in C "
         "by Anthony Anicotte\n\n\n");
-    for (int i = 0; tab[i] != NULL; i++)
+    printw("                 Generation n°%d\n", state);
+    for (int i = 0; tab[i] != NULL; i++) {
         printw("                 %s\n", tab[i]);
-    printw("               Generation n°%d\n", state);
+    }
 }
 
 int main(int ac, char **av)
