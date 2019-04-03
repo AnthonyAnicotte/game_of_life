@@ -7,7 +7,18 @@ It uses the ncurses library.
 
 You have to use the 'make' command to compile the project.
 
-Usage: ./conway [map] [speed]
+Usage of the simulator: ./conway [map] [speed]
+
+Usage of the creator: ./conway [width] [height] [map_path]
+
+
+"How to use the creator mode ?"
+
+You juste have to launch the ./creator binary according to the usage upper and start editing.
+Press space bar to place a dot and again to remove him
+To save your map, press the backspace key
+
+
 
 Generation per Second becomes 'GPS'
 
@@ -25,9 +36,14 @@ Map restrictions:
 Known Bugs:
 
 - No error handling for maps and argument [COMING SOON]
+- No error handling in creator mode
+- Coding Style
 
 
 Update Log:
+
+April 3rd, 2019:
+- Added a new feature/program: YOu now have the creator mode to create your own maps !
 
 
 April 3rd, 2019:
@@ -39,8 +55,9 @@ April 2nd, 2019:
 
 Notes:
 
-Some Features will coming in the future.
+Some Features will come in the future.
 
 Features already implemented:
 
+- Creator Mode
 - GPS handling (speed)
