@@ -9,6 +9,7 @@
 
 #include "struct.h"
 
+/*Fonctions du jeu*/
 void free_structure(game_of_life_t *gol_struct);
 char **parse_map(char *str, game_of_life_t *gol_struct);
 void print_tab(char **tab, unsigned long int state);
