@@ -6,7 +6,7 @@
 ##
 
 SRC_CONWAY	=	$(wildcard src/simulation/*.c)
-SRC_CREATOR	=	$(wildcard src/simulation/*.c)
+SRC_CREATOR	=	$(wildcard src/creator/*.c)
 
 NAME_CONWAY	=	conway
 NAME_CREATOR =	creator
