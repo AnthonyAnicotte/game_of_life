@@ -85,10 +85,22 @@ void fill_map(char *file_path, creator_t *crea_struct)
     fclose(fp);
 }
 
+void print_usage(void)
+{
+    printf("./creator USAGES :\n\n- Use ./creator [WIDTH] [HEIGHT] [MAP_PATH]\n\n");
+    printf("WIDTH : represents the width of the map (in characters)\n");
+    printf("HEIGHT : represents the height of the map (in characters)\n");
+    printf("MAP_PATH : represents the file where the map will be saved\n");
+}
+
 int main(int ac, char **av)
 {
-    //    if (error_handling(ac, av) != 0)
-    //        return (84);
+    if (ac == 1) {
+        print_usage();
+        return (0);
+    }
+//    if (error_handling(ac, av) != 0)
+//        return (84);
     creator_t *crea_struct = malloc(sizeof(creator_t));
     init_struct(atoi(av[1]), atoi(av[2]), crea_struct);
     start_creator(crea_struct);

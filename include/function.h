@@ -17,5 +17,6 @@ int start_game(game_of_life_t *gol_struct);
 void free_tab(char **tab);
 char **copy_tab(char **map, int lines);
 void clear_print_and_refresh(game_of_life_t *gol_struct);
+int error_handling(int ac, char **av);
 
 #endif
