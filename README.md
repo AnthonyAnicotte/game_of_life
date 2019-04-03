@@ -16,7 +16,7 @@ Usage of the creator: ./conway [width] [height] [map_path]
 
 You juste have to launch the ./creator binary according to the usage upper and start editing.
 Press space bar to place a dot and again to remove him
-To save your map, press the backspace key
+To save your map, press the ENTER key
 
 
 
