@@ -28,7 +28,7 @@ int get_event(creator_t *crea_struct)
         case ' ':
             space(crea_struct);
             break;
-        case KEY_BACKSPACE:
+        case '\n':
             return (0);
         }
     }
