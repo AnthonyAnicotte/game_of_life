@@ -7,5 +7,5 @@
 
 int error_handling(int ac, char **av)
 {
-
+    return (0);
 }

@@ -35,7 +35,7 @@ void create_new_dot(creator_t *crea_struct)
     crea_struct->dot_pos_y[crea_struct->nbr_max_dot] = crea_struct->p_pos->y;
 }
 
-int delete_this_dot(creator_t *crea_struct, int dot)
+void delete_this_dot(creator_t *crea_struct, int dot)
 {
     for (int i = dot; i < crea_struct->nbr_max_dot; i++) {
         crea_struct->dot_pos_x[i] = crea_struct->dot_pos_x[i + 1];
