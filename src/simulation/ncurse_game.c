@@ -76,6 +76,8 @@ int get_event(game_of_life_t *gol_struct)
             case ' ':
                 update_cells(gol_struct);
                 break;
+            case 27:
+                return (0);
             }
         }
     }

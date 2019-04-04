@@ -14,6 +14,7 @@ void free_structure(creator_t *crea_struct);
 void print_tab(char **tab);
 void start_creator(creator_t *crea_struct);
 void clear_print_and_refresh(creator_t *crea_struct);
+int there_is_a_dot_under_the_guy(creator_t *crea_struct);
 
 void key_up(creator_t *crea_struct);
 void key_down(creator_t *crea_struct);

@@ -6,8 +6,19 @@
 */
 
 #include <ncurses.h>
+#include <stdlib.h>
 #include "struct.h"
 #include "function_creator.h"
+
+void delete_all_dots(creator_t *crea_struct)
+{
+    crea_struct->nbr_max_dot = 0;
+    crea_struct->dot_pos_y = realloc(crea_struct->dot_pos_y,
+        sizeof(int) * (crea_struct->nbr_max_dot + 1));
+    crea_struct->dot_pos_x = realloc(crea_struct->dot_pos_x,
+        sizeof(int) * (crea_struct->nbr_max_dot + 1));
+    clear_print_and_refresh(crea_struct);
+}
 
 int get_event(creator_t *crea_struct)
 {
@@ -30,6 +41,10 @@ int get_event(creator_t *crea_struct)
             break;
         case '\n':
             return (0);
+        case 'r':
+            delete_all_dots(crea_struct);
+        case KEY_BACKSPACE:
+            delete_all_dots(crea_struct);
         }
     }
 }

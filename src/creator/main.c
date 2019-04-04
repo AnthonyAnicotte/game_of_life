@@ -40,7 +40,7 @@ char **gen_map(creator_t *crea_struct)
         for (int j = 1; j < crea_struct->columns + 1; j++)
             tab[i][j] = ' ';
     }
-    tab[1][1] = 'P';
+    tab[1][1] = 'F';
     return (tab);
 }
 
@@ -74,7 +74,7 @@ void fill_map(char *file_path, creator_t *crea_struct)
         map[crea_struct->dot_pos_y[i]][crea_struct->dot_pos_x[i]] = '.';
     for (int i = 0; map[i] != NULL; i++) {
         for (int j = 0; map[i][j] != '\0'; j++)
-            if (map[i][j] == 'P')
+            if (map[i][j] == 'F')
                 map[i][j] = ' ';
     }
     fp = fopen(file_path, "w+");
@@ -90,7 +90,10 @@ void print_usage(void)
     printf("./creator USAGES :\n\n- Use ./creator [WIDTH] [HEIGHT] [MAP_PATH]\n\n");
     printf("WIDTH : represents the width of the map (in characters)\n");
     printf("HEIGHT : represents the height of the map (in characters)\n");
-    printf("MAP_PATH : represents the file where the map will be saved\n");
+    printf("MAP_PATH : represents the file where the map will be saved\n\n");
+    printf("Commands:\n\n- Arrow keys to move your character\n- Space to place");
+    printf("/remove a dot\n- Key R or BackSpace to reset the map\n- Enter to");
+    printf("save the map\n");
 }
 
 int main(int ac, char **av)
