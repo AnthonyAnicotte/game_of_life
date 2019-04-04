@@ -7,12 +7,20 @@ It uses the ncurses library.
 
 You have to use the 'make' command to compile the project.
 
-Usage of the simulator: ./conway [map] [speed]
+    
+            [Usage of the simulator]: ./conway [map] [speed]
 
-Usage of the creator: ./conway [width] [height] [map_path]
+	             "How to use the simulator mode ?"
+
+If you chose the manual mode, press space to skip 1 Generation
+Else you just have to wait that the generations stagnates.
+Press Escape or BackSpace to leave at any moment
 
 
-"How to use the creator mode ?"
+      	[Usage of the creator]: ./conway [width] [height] [map_path]
+
+
+	       	      "How to use the creator mode ?"
 
 You juste have to launch the ./creator binary according to the usage upper and start editing.
 Press space bar to place a dot and again to remove him
@@ -41,6 +49,9 @@ Known Bugs:
 
 
 Update Log:
+
+April 4th, 2019:
+- Added usages and print_commands for user comfort
 
 April 3rd, 2019:
 - Added a new feature/program: You now have the creator mode to create your own maps !
