@@ -41,10 +41,23 @@ void print_tab(char **tab, unsigned long int state)
     }
 }
 
+void print_usage(void)
+{
+    printf("./conway USAGES:\n\n- Use ./creator [MAP_PATH] [SPEED:optional]\n\n");
+    printf("MAP_PATH : represents the path where the map will be read\n");
+    printf("SPEED : represents the Generations per second, do not write if you"
+           "want the manual mode\n\n");
+    printf("Press Space in manual mode to skip a generation\n");
+}
+
 int main(int ac, char **av)
 {
     game_of_life_t *gol_struct;
 
+    if (ac == 1) {
+        print_usage();
+        return (0);
+    }
     //    if (error_handling(ac, av) == 1)
     //        return (84);
     gol_struct = malloc(sizeof(game_of_life_t));
@@ -53,6 +66,5 @@ int main(int ac, char **av)
         gol_struct->speed = atoi(av[2]);
     get_tab_from_map_str(av[1], gol_struct);
     start_game(gol_struct);
-    printf("speed = %d\n", gol_struct->speed);
     free_structure(gol_struct);
 }

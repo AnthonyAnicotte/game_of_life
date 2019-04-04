@@ -25,5 +25,6 @@ void clear_print_and_refresh(game_of_life_t *gol_struct)
 {
     clear();
     print_tab(gol_struct->map, gol_struct->generation);
+    printw("\n\nPress Space in manual mode to skip a generation\n");
     refresh();
 }
