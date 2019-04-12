@@ -7,6 +7,7 @@
 
 #include <ncurses.h>
 #include <stdlib.h>
+#include <getopt.h>
 #include "struct.h"
 #include "function_creator.h"
 
@@ -45,18 +46,28 @@ int get_event(creator_t *crea_struct)
             delete_all_dots(crea_struct);
         case KEY_BACKSPACE:
             delete_all_dots(crea_struct);
+        case 27:
+            return (1);
         }
     }
 }
 
-void start_creator(creator_t *crea_struct)
+int start_creator(creator_t *crea_struct, int ac, char **av)
 {
+    int leave = 0;
+
+    if (flag_r_option(crea_struct, ac, av) == 0) {
+        automatic_gen_map(crea_struct);
+        return (0);
+    }
     initscr();
     keypad(stdscr, TRUE);
     curs_set(FALSE);
     noecho();
     refresh();
     clear_print_and_refresh(crea_struct);
-    get_event(crea_struct);
+    if (get_event(crea_struct) == 1)
+        leave = 1;
     endwin();
+    return (leave);
 }

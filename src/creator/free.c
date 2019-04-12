@@ -19,6 +19,7 @@ void free_tab(char **tab)
 void free_structure(creator_t *crea_struct)
 {
     free_tab(crea_struct->empty_map);
+    free(crea_struct->p_pos);
     free(crea_struct->dot_pos_x);
     free(crea_struct->dot_pos_y);
     free(crea_struct);

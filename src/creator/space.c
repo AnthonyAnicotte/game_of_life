@@ -24,15 +24,15 @@ int there_is_a_dot_under_the_guy(creator_t *crea_struct)
     return (-1);
 }
 
-void create_new_dot(creator_t *crea_struct)
+void create_new_dot(creator_t *crea_struct, int x, int y)
 {
     crea_struct->nbr_max_dot++;
     crea_struct->dot_pos_x = realloc(crea_struct->dot_pos_x,
         sizeof(int) * (crea_struct->nbr_max_dot + 1));
     crea_struct->dot_pos_y = realloc(crea_struct->dot_pos_y,
         sizeof(int) * (crea_struct->nbr_max_dot + 1));
-    crea_struct->dot_pos_x[crea_struct->nbr_max_dot] = crea_struct->p_pos->x;
-    crea_struct->dot_pos_y[crea_struct->nbr_max_dot] = crea_struct->p_pos->y;
+    crea_struct->dot_pos_x[crea_struct->nbr_max_dot] = x;
+    crea_struct->dot_pos_y[crea_struct->nbr_max_dot] = y;
 }
 
 void delete_this_dot(creator_t *crea_struct, int dot)
@@ -53,7 +53,7 @@ void space(creator_t *crea_struct)
     int flag = there_is_a_dot_under_the_guy(crea_struct);
 
     if (flag == -1)
-        create_new_dot(crea_struct);
+        create_new_dot(crea_struct, crea_struct->p_pos->x, crea_struct->p_pos->y);
     else
         delete_this_dot(crea_struct, flag);
     clear_print_and_refresh(crea_struct);

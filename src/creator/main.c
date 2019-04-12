@@ -10,6 +10,7 @@
 #include <curses.h>
 #include <zconf.h>
 #include <memory.h>
+#include <time.h>
 #include "struct.h"
 #include "function_creator.h"
 
@@ -17,25 +18,21 @@ char **gen_map(creator_t *crea_struct)
 {
     char **tab = malloc(sizeof(char *) * (crea_struct->lines + 3));
 
-    //Malloc des lignes + le NULL
     for (int i = 0; i < crea_struct->lines + 3; i++)
         tab[i] = malloc(sizeof(char) * crea_struct->columns + 3);
     tab[crea_struct->lines + 2] = NULL;
 
-    //Met les '-' au début et à la fin
     for (int i = 0; i < crea_struct->columns + 2; i++) {
         tab[0][i] = '-';
         tab[crea_struct->lines + 1][i] = '-';
     }
 
-    //Mets les '\0' et les '|' à la fin des lignes
     for (int i = 1; i < crea_struct->lines + 1; i++) {
         tab[i][crea_struct->columns + 2] = '\0';
         tab[i][0] = '|';
         tab[i][crea_struct->columns + 1] = '|';
     }
 
-    // on fill avec les espaces
     for (int i = 1; i < crea_struct->lines + 1; i++) {
         for (int j = 1; j < crea_struct->columns + 1; j++)
             tab[i][j] = ' ';
@@ -46,6 +43,7 @@ char **gen_map(creator_t *crea_struct)
 
 void init_struct(int columns, int lines, creator_t *crea_struct)
 {
+    crea_struct->random_pc = -1;
     crea_struct->p_pos = malloc(sizeof(position_t));
     crea_struct->p_pos->x = 1;
     crea_struct->p_pos->y = 1;
@@ -91,6 +89,7 @@ void print_usage(void)
     printf("WIDTH : represents the width of the map (in characters)\n");
     printf("HEIGHT : represents the height of the map (in characters)\n");
     printf("MAP_PATH : represents the file where the map will be saved\n\n");
+    printf("RANDOM_PC : represents the percentage for the automatic generation");
     printf("Commands:\n\n- Arrow keys to move your character\n- Space to place");
     printf("/remove a dot\n- Key R or BackSpace to reset the map\n- Enter to");
     printf("save the map\n");
@@ -104,9 +103,15 @@ int main(int ac, char **av)
     }
 //    if (error_handling(ac, av) != 0)
 //        return (84);
+    srand(time(NULL));
     creator_t *crea_struct = malloc(sizeof(creator_t));
     init_struct(atoi(av[1]), atoi(av[2]), crea_struct);
-    start_creator(crea_struct);
+    if (start_creator(crea_struct, ac, av) != 0) {
+        free_structure(crea_struct);
+        return (0);
+    }
     fill_map(av[3], crea_struct);
+    if (crea_struct->random_pc != -1)
+        print_map(av[3], crea_struct);
     free_structure(crea_struct);
 }

@@ -24,6 +24,7 @@ typedef struct position_s
 
 typedef struct creator_s
 {
+    int random_pc;
     char **empty_map;
     char **dotty_map;
     int lines;
