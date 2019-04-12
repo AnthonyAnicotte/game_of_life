@@ -17,10 +17,15 @@ Else you just have to wait that the generations stagnates.
 Press Escape or BackSpace to leave at any moment
 
 
-      	[Usage of the creator]: ./conway [width] [height] [map_path]
+      	[Usage of the creator]: ./conway [width] [height] [map_path] {OPTIONNAL: -r [random_pc]}
 
 
 	       	      "How to use the creator mode ?"
+
+Hints:
+
+To have a graphical square in the terminal, 'width' should be 2x'height'
+The random "-r" flag is optionnal. This flag has to be followed by the percentage of dots filled
 
 You juste have to launch the ./creator binary according to the usage upper and start editing.
 Press space bar to place a dot and again to remove him
@@ -50,6 +55,9 @@ Known Bugs:
 
 Update Log:
 
+April 10th; 2019:
+- Automatic generation is now available with the '-r' flag
+
 April 4th, 2019:
 - Added usages and print_commands for user comfort
 
@@ -70,5 +78,6 @@ Some Features will come in the future.
 
 Features already implemented:
 
+- Automatic Generation
 - Creator Mode
 - GPS handling (speed)
