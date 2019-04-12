@@ -7,7 +7,7 @@
 
 #include <memory.h>
 #include <ncurses.h>
-#include "function.h"
+#include "function_simulator.h"
 #include "stdlib.h"
 #include "struct.h"
 

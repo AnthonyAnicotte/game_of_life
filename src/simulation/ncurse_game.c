@@ -8,7 +8,7 @@
 #include <ncurses.h>
 #include <zconf.h>
 #include "struct.h"
-#include "function.h"
+#include "function_simulator.h"
 
 int get_nbr_neighbors(game_of_life_t *gol_struct, int i, int j)
 {

@@ -13,7 +13,7 @@
 #include <stdio.h>
 #include <ncurses.h>
 #include "struct.h"
-#include "function.h"
+#include "function_simulator.h"
 
 void get_tab_from_map_str(char *map_path, game_of_life_t *gol_struct)
 {
