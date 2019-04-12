@@ -89,7 +89,10 @@ void print_usage(void)
     printf("WIDTH : represents the width of the map (in characters)\n");
     printf("HEIGHT : represents the height of the map (in characters)\n");
     printf("MAP_PATH : represents the file where the map will be saved\n\n");
+<<<<<<< HEAD
     printf("RANDOM_PC : represents the percentage for the automatic generation");
+=======
+>>>>>>> 5e33bf3a10b2592baa02a6cfce876027d2f68679
     printf("Commands:\n\n- Arrow keys to move your character\n- Space to place");
     printf("/remove a dot\n- Key R or BackSpace to reset the map\n- Enter to");
     printf("save the map\n");

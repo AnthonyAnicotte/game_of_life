@@ -7,7 +7,10 @@
 
 #include <ncurses.h>
 #include <stdlib.h>
+<<<<<<< HEAD
 #include <getopt.h>
+=======
+>>>>>>> 5e33bf3a10b2592baa02a6cfce876027d2f68679
 #include "struct.h"
 #include "function_creator.h"
 
@@ -46,8 +49,11 @@ int get_event(creator_t *crea_struct)
             delete_all_dots(crea_struct);
         case KEY_BACKSPACE:
             delete_all_dots(crea_struct);
+<<<<<<< HEAD
         case 27:
             return (1);
+=======
+>>>>>>> 5e33bf3a10b2592baa02a6cfce876027d2f68679
         }
     }
 }
