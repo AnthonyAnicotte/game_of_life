@@ -6,7 +6,6 @@
 */
 
 #include <stdlib.h>
-#include <getopt.h>
 #include <stdio.h>
 #include <zconf.h>
 #include <fcntl.h>
@@ -16,7 +15,7 @@
 void print_map(char *file_path, creator_t *crea_struct)
 {
     int fd;
-    int size = (crea_struct->columns + 3) * (crea_struct->lines + 2);
+    size_t size = (size_t)(crea_struct->columns + 3) * (crea_struct->lines + 2);
     char *buffer = malloc(sizeof(char) * size + 1);
 
     fd = open(file_path, O_RDONLY);
@@ -26,29 +25,6 @@ void print_map(char *file_path, creator_t *crea_struct)
         file_path, buffer);
     free(buffer);
     close(fd);
-}
-
-int get_percentage(char **av)
-{
-    int percentage = 0;
-
-    for (int i = 0; av[i] != NULL; i++)
-        if (av[i][1] == 'r')
-            percentage = atoi(av[i + 1]);
-    return (percentage);
-}
-
-int flag_r_option(creator_t *crea_struct, int ac, char **av)
-{
-    int options;
-
-    while ((options = getopt(ac, av, "r")) != -1) {
-        if (options == 'r') {
-            crea_struct->random_pc = get_percentage(av);
-            return (0);
-        }
-    }
-    return (1);
 }
 
 void create_the_dot(creator_t *crea_struct, int x, int y)
