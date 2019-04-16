@@ -59,7 +59,7 @@ To launch the simulation, execute the following command
 ## Comments
 - The manual mode is the default mode if you don't precize the speed
 - You'll find commands in help guide and in the simulation
-- /!\ The actual version of the simulator is not update. Use ./conway [PATH] [SPEED] to launch the simulation
+- /!\ The actual version of the simulator is not updated. Use ./conway [PATH] [SPEED] to launch the simulation
 
 The map have several restrictions:
 -- The dead cells are represented by spaces and alive cells by dots
