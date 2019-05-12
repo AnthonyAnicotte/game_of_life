@@ -44,6 +44,7 @@ int main(int ac, char **av)
     if (error_handling_creator(av) != 0)
         return (84);
     creator_t *crea_struct = malloc(sizeof(creator_t));
+
     init_struct(av, crea_struct);
     if (start_creator(crea_struct, av) != 0) {
         free_structure(crea_struct);
