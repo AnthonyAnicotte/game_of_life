@@ -37,7 +37,7 @@ void print_usage(void)
 
 int main(int ac, char **av)
 {
-    if (ac == 1 || strcmp(av[2], "-h") == 0 || strcmp(av[2], "--help") == 0) {
+    if (ac == 1 || strcmp(av[1], "-h") == 0 || strcmp(av[1], "--help") == 0) {
         print_usage();
         return (0);
     }
